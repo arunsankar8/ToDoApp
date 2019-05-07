@@ -7,8 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 import com.example.todoapps.R
 import com.example.todoapps.api.ApiRepo
+import com.example.todoapps.database.entity.Tasks
 import com.example.todoapps.ui.home.adapter.SearchRecyclerAdapter
-import com.tiffin.metal.dl.models.downsync.container.SyncDataContainer
+
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import rx.Observable
@@ -27,64 +28,11 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val apiRepo: ApiRepo = ApiRepo()
-        fab.setOnClickListener {
 
-            apiRepo.callContainerDownSyncApi()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(object : Observer<SyncDataContainer> {
-                    override fun onError(e: Throwable?) {
-
-                        if (true) {
-
-                        }
-                    }
-
-                    override fun onNext(t: SyncDataContainer?) {
-                        if (t != null) {
-                            setupAdapter(t)
-                        }
-                    }
-
-                    override fun onCompleted() {
-
-
-                    }
-                })
-            /*observable= Observable
-            .just(1, 2, 3, 4, 5,6,7)
-            .filter( Func1<Int,Boolean> {
-                return@Func1 it%2!=0
-            })
-        var stringBuilder=StringBuilder()
-        stringBuilder.append("")
-        val action= object:Observer<Int> {
-            override fun onError(e: Throwable?) {
-
-
-            }
-
-            override fun onNext(t: Int?) {
-                stringBuilder.append(t.toString()+" ")
-                tvSample.text=stringBuilder
-            }
-
-            override fun onCompleted() {
-
-            }
-
-        }
-
-        subscription= observable
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(action)*/
-
-        }
     }
-    private fun setupAdapter(syncDataContainer: SyncDataContainer) {
+    private fun setupAdapter(syncDataContainer: List<Tasks>) {
         val layoutmanager = LinearLayoutManager(this)
-        val adapter=SearchRecyclerAdapter(this,syncDataContainer.data.containers)
+        val adapter=SearchRecyclerAdapter(this,syncDataContainer)
         rvData.layoutManager=layoutmanager
         rvData.adapter=adapter
 

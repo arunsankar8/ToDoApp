@@ -6,18 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.todoapps.R
-import com.example.todoapps.model.container.ContainerData
+import com.example.todoapps.database.entity.Tasks
+
 import kotlinx.android.synthetic.main.item_search_layout.view.*
 
 
-class SearchRecyclerAdapter(private val context: Context, private val containerData: List<ContainerData>): RecyclerView.Adapter<SearchRecyclerAdapter.SearchRecyclerViewHolder>() {
+class SearchRecyclerAdapter(private val context: Context, private val containerData: List<Tasks>): RecyclerView.Adapter<SearchRecyclerAdapter.SearchRecyclerViewHolder>() {
     override fun onBindViewHolder(holder: SearchRecyclerViewHolder, position: Int) {
 
 
-        holder.itemView.tvItemName.text=(containerData.get(position).containerNumber)
 
-        holder.itemView.tvLocationTitle.visibility=View.VISIBLE
-        holder.itemView.tvLocationName.visibility=View.VISIBLE
 
 
     }
