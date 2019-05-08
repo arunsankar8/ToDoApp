@@ -4,26 +4,33 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#F00B5F</color>
 
-    <color name="white">#FFFFFF</color>
-    <color name="grey">#D5D4D4</color>
-    <color name="container_selection_color">#5e6672</color>
-    <color name="qr_code_color_purple">#585277</color>
-
-    <color name="blue">#4C78F7</color>
-    <color name="text_color">#101010</color>
-    <color name="item_detail_background">#EEEEEE</color>
-    <color name="black">#000000</color>
-    <color name="sync_text">#ffb951</color>
-    <color name="dark_red">#793537</color>
-    <color name="button_color">#762E30</color>
-    <color name="sync_red">#E10707</color>
     <color name="transparent">#00000000</color>
-    <color name="login_background">#EAE0E1</color>
-    <color name="snack_color">#414447</color>
+    <color name="transparent_black">#BB000000</color>
+    <color name="transparent_white">#00FFFFFF</color>
+    <color name="transparent_green">#BB5FB130</color>
+    <color name="transparent_red">#BBCE141F</color>
+    <color name="transparent_grey">#AA99969d</color>
+    <color name="transparent_blue">#BB0095D7</color>
+    <color name="transparent_yellow">#BBFFD000</color>
+    <color name="transparent_royal_purple">#BB6F2E88</color>
+    <color name="transparent_cyan">#BB26AF8D</color>
+    <color name="transparent_violet">#BB522777</color>
 
-
-    <color name="grey_color_text">#3e4147</color>
-    <color name="keyboard_background">#333c4c</color>
-    <color name="space_preview">#313f56</color>
-
+    <color name="purple">#585277</color>
+    <color name="dark_red">#793537</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#5FB130</color>
+    <color name="red">#CE141F</color>
+    <color name="grey">#b5b5b5</color>
+    <color name="grey_color_text">#555555</color>
+    <color name="blue">#0095D7</color>
+    <color name="yellow">#FFD000</color>
+    <color name="royal_purple">#6F2E88</color>
+    <color name="cyan">#26AF8D</color>
+    <color name="violet">#522777</color>
+    <color name="pink">#ff0080</color>
+    <color name="light_grey">#ECECEC</color>
+    <color name="cream">#FAF3E7</color>
+    <color name="orange">#F69A3C</color>
 </resources>

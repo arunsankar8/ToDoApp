@@ -1,15 +1,16 @@
 package com.example.todoapps.database
 
+import android.arch.persistence.room.Database
+import android.arch.persistence.room.Room
+import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+
 import com.example.todoapps.database.dao.TasksListDao
 import com.example.todoapps.database.entity.Tasks
 
 
 @Database(entities = [Tasks::class],version = 1)
-abstract class ToDoRoomDatabase :RoomDatabase(){
+abstract class ToDoRoomDatabase : RoomDatabase(){
 
     abstract fun tasksDao(): TasksListDao
     companion object {

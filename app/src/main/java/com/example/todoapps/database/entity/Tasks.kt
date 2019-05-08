@@ -1,15 +1,22 @@
 package com.example.todoapps.database.entity
 
-import androidx.room.ColumnInfo
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
+import java.io.Serializable
 
 
 @Entity(tableName = "tasksList")
 data class Tasks(
-    @PrimaryKey(autoGenerate = true) val id:Int,
-    @ColumnInfo(name = "taskName") val taskName: String,
-    @ColumnInfo(name = "taskDesc") val taskDesc: String,
-    @ColumnInfo(name = "date") val date: String
-)
+    @PrimaryKey(autoGenerate = true) var id:Int,
+    @ColumnInfo(name = "taskName") var taskName: String,
+    @ColumnInfo(name = "taskDesc") var taskDesc: String,
+    @ColumnInfo(name = "date") var date: String
+):Serializable{
+
+    constructor():this(0,"","","")
+
+
+
+}

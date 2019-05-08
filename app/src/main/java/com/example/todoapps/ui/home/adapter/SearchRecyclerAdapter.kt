@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import com.example.todoapps.R
 import com.example.todoapps.database.entity.Tasks
 
-import kotlinx.android.synthetic.main.item_search_layout.view.*
 
-
-class SearchRecyclerAdapter(private val context: Context, private val containerData: List<Tasks>): RecyclerView.Adapter<SearchRecyclerAdapter.SearchRecyclerViewHolder>() {
+class SearchRecyclerAdapter(private val context: Context, private val taskList: List<Tasks>): RecyclerView.Adapter<SearchRecyclerAdapter.SearchRecyclerViewHolder>() {
     override fun onBindViewHolder(holder: SearchRecyclerViewHolder, position: Int) {
 
 
-
+       /* tvTaskName.text=taskList[position].taskName
+       tvTaskDescription.text=taskList[position].taskDesc
+*/
 
 
     }
@@ -29,7 +29,7 @@ class SearchRecyclerAdapter(private val context: Context, private val containerD
 
     override fun getItemCount(): Int {
 
-        return (containerData.size)
+        return (taskList.size)
     }
     
     class SearchRecyclerViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
