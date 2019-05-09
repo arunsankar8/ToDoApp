@@ -1,68 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.addTask.AddTaskActivity">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              style="@style/text_medium_black" app:layout_constraintEnd_toEndOf="parent"
-              android:text="@string/heading"
-              app:layout_constraintStart_toStartOf="parent"
-              android:layout_marginStart="24dp" android:id="@+id/tvHeading"
-              app:layout_constraintHorizontal_bias="0.004" app:layout_constraintBaseline_toBaselineOf="@+id/etHeading"/>
+    <data>
+        <variable name="task" type="com.example.todoapps.database.entity.Tasks"/>
+        
+        <variable name="btnClick" type="com.example.todoapps.ui.addTask.AddTaskActivity.ButtonClick"/>
 
-    <EditText android:layout_width="0dp" android:layout_height="wrap_content"
-              style="@style/text_medium_black"
-              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
-              app:layout_constraintTop_toTopOf="parent"
-              android:id="@+id/etHeading"
-              android:inputType="text"
-              android:hint="@string/empty"
-              app:layout_constraintStart_toEndOf="@+id/tvHeading" android:layout_marginStart="32dp"
-              app:layout_constraintHorizontal_bias="1.0"
-              app:layout_constraintBottom_toTopOf="@+id/guideline" app:layout_constraintVertical_bias="0.983"
-              android:layout_marginBottom="8dp" android:autofillHints="Heading" tools:targetApi="o"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+           
+            xmlns:tools="http://schemas.android.com/tools"
+            
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.addTask.AddTaskActivity">
 
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  style="@style/text_medium_black" app:layout_constraintEnd_toEndOf="parent"
+                  android:text="@string/title"
+                  app:layout_constraintStart_toStartOf="parent"
+                  android:layout_marginStart="24dp" android:id="@+id/tvHeading"
+                  app:layout_constraintHorizontal_bias="0.004" app:layout_constraintBaseline_toBaselineOf="@+id/etHeading"/>
 
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              style="@style/text_medium_black"
-              android:text="@string/description"
-              app:layout_constraintStart_toStartOf="parent"
-              android:id="@+id/tvDescription"
-              android:layout_marginStart="16dp" app:layout_constraintBaseline_toBaselineOf="@+id/etTaskDesc"/>
-
-    <EditText android:layout_width="0dp" android:layout_height="wrap_content"
-              style="@style/text_medium_black"
-              android:id="@+id/etTaskDesc"
-              android:inputType="text"
-              android:hint="@string/empty"
-              app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
-              app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintStart_toEndOf="@+id/tvDescription" android:layout_marginStart="16dp"
-              app:layout_constraintHorizontal_bias="0.0"
-              app:layout_constraintTop_toTopOf="@+id/guideline" app:layout_constraintVertical_bias="0.0"
-              android:layout_marginTop="8dp" android:importantForAutofill="no" tools:targetApi="o"/>
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline"
-                                          app:layout_constraintGuide_percent="0.5"
-                                          android:orientation="horizontal"/>
-
-    <Button
-            android:id="@+id/btnAddTask" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="100dp"
-            android:text="@string/add_task"
-            android:paddingStart="@dimen/dp_40"
-            android:paddingEnd="@dimen/dp_40"
-            android:background="@color/orange"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/etTaskDesc"
-            app:layout_constraintVertical_bias="0.496"/>
+        <EditText android:layout_width="0dp" android:layout_height="wrap_content"
+                  style="@style/text_medium_black"
+                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:id="@+id/etHeading"
+                  android:inputType="text"
+                  android:hint="@string/empty"
+                  android:text="@{task.taskName}"
+                  app:layout_constraintStart_toEndOf="@+id/tvHeading" android:layout_marginStart="32dp"
+                  app:layout_constraintHorizontal_bias="1.0"
+                  app:layout_constraintBottom_toTopOf="@+id/guideline" app:layout_constraintVertical_bias="0.983"
+                  android:layout_marginBottom="8dp" android:autofillHints="Heading" tools:targetApi="o"/>
 
 
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  style="@style/text_medium_black"
+                  android:text="@string/description"
+                  app:layout_constraintStart_toStartOf="parent"
+                  android:id="@+id/tvDescription"
+                  android:layout_marginStart="16dp" app:layout_constraintBaseline_toBaselineOf="@+id/etTaskDesc"/>
+
+        <EditText android:layout_width="0dp" android:layout_height="wrap_content"
+                  style="@style/text_medium_black"
+                  android:id="@+id/etTaskDesc"
+                  android:inputType="text"
+                  android:hint="@string/empty"
+                  android:text="@{task.taskDesc}"
+                  app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintStart_toEndOf="@+id/tvDescription" android:layout_marginStart="16dp"
+                  app:layout_constraintHorizontal_bias="0.0"
+                  app:layout_constraintTop_toTopOf="@+id/guideline" app:layout_constraintVertical_bias="0.0"
+                  android:layout_marginTop="8dp" android:importantForAutofill="no" tools:targetApi="o"/>
+        <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                              android:id="@+id/guideline"
+                                              app:layout_constraintGuide_percent="0.5"
+                                              android:orientation="horizontal"/>
+
+        <Button
+                android:id="@+id/btnAddTask" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="100dp"
+                android:text="@string/add_task"
+                android:paddingStart="@dimen/dp_40"
+                android:paddingEnd="@dimen/dp_40"
+                android:background="@color/orange"
+                android:onClick="@{btnClick::AddButtonClick("
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/etTaskDesc"
+                app:layout_constraintVertical_bias="0.496"/>
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
